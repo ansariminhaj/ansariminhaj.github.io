@@ -19,6 +19,15 @@
     
     /* Header */
     header {text-align:center; margin-bottom:40px;}
+    header img {
+      width:150px;
+      height:150px;
+      object-fit:cover;
+      border-radius:50%;
+      border:3px solid #3498db;
+      margin-bottom:15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
     header h1 {font-size:2.5rem; color:#2c3e50;}
     header p {font-size:1.1rem; color:#7f8c8d; margin-top:10px;}
     header a svg {transition: transform 0.3s, opacity 0.3s;}
@@ -31,19 +40,14 @@
     /* Research & Education */
     .item {margin-bottom:20px;}
     .item h3 {font-size:1.2rem; color:#2c3e50;}
-    .item span {font-size:0.9rem; color:#444; font-style:italic;} /* Darker gray and italic */
+    .item span {font-size:0.9rem; color:#444; font-style:italic;}
     .item p {margin-top:5px; color:#555;}
     
-/* Default heading style */
-.item h3 {
-  color: #2c3e50; /* normal dark */
-}
-
-/* If the heading is wrapped in an <a>, make it blue */
-.item a h3 {
-  color: #3498db;
-}
-
+    /* Default heading style */
+    .item h3 {color:#2c3e50;}
+    /* If the heading is wrapped in an <a>, make it blue */
+    .item a h3 {color:#3498db;}
+    
     /* Skills */
     .skills {display:flex; flex-wrap:wrap; gap:10px;}
     .skill {background:#3498db; color:#fff; padding:5px 10px; border-radius:5px; font-size:0.9rem;}
@@ -61,6 +65,7 @@
 <body>
   <div class="container">
     <header>
+      <img src="IMG_9767-2.jpg" alt="Minhaj Ansari">
       <h1>Minhaj Ansari</h1>
       <p>
         <a href="https://www.linkedin.com/in/minhaj-uddin-ansari-040573160/" target="_blank" aria-label="LinkedIn Profile" style="margin-right:10px;">
@@ -78,6 +83,7 @@
       </p>
     </header>
 
+    <!-- Rest of your sections remain unchanged -->
     <section id="about">
       <h2>Hi!</h2>
       <p>I'm a Data Scientist in the Department of Cardiology at the UCSF School of Medicine, University of California, San Francisco.</p>
@@ -113,7 +119,6 @@
       </div>
     </section>
 
-    <!-- New Awards Section -->
     <section id="awards">
       <h2>Awards</h2>
       <div class="item">
@@ -124,8 +129,8 @@
       </div>
 
       <div class="item">
-          <h3>SPOT Achievement Award</h3>
-        <span>University of California, San Francisco, 2025</span>
+        <h3>SPOT Achievement Award</h3>
+        <span>University of California, San Francisco, 2023</span>
       </div>
 
       <div class="item">
