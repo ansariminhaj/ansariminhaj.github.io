@@ -1,1 +1,294 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Your Name — CV</title>
+  <meta name="description" content="Curriculum Vitae of Your Name: experience, projects, education, and skills." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f9fb;
+      --card: #ffffff;
+      --ink: #0f172a; /* slate-900 */
+      --muted: #475569; /* slate-600 */
+      --accent: #2563eb; /* blue-600 */
+      --border: #e2e8f0; /* slate-200 */
+      --chip: #eef2ff; /* indigo-50 */
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1220;
+        --card: #0f172a;
+        --ink: #e5e7eb; /* slate-200 */
+        --muted: #94a3b8; /* slate-400 */
+        --accent: #60a5fa; /* blue-400 */
+        --border: #1f2937; /* gray-800 */
+        --chip: #111827; /* gray-900 */
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--ink);
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(37,99,235,.08), transparent 40%),
+                  radial-gradient(800px 600px at 110% 10%, rgba(99,102,241,.08), transparent 30%),
+                  var(--bg);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 5rem; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
+    .actions { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .btn {
+      border: 1px solid var(--border); background: var(--card); color: var(--ink);
+      padding: .5rem .9rem; border-radius: .75rem; cursor: pointer; font-weight: 600; letter-spacing: .2px;
+      box-shadow: 0 1px 0 rgba(0,0,0,.03);
+    }
+    .btn:hover { border-color: var(--accent); }
+
+    .grid { display: grid; grid-template-columns: 320px 1fr; gap: 1.25rem; align-items: start; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 1rem; padding: 1.25rem; }
+    .header { display: grid; grid-template-columns: 96px 1fr; gap: 1rem; align-items: center; }
+    .avatar { width: 96px; height: 96px; border-radius: 1rem; object-fit: cover; border: 1px solid var(--border); }
+    .name { margin: 0; font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem); line-height: 1.2; }
+    .role { margin: .15rem 0 0; color: var(--muted); font-weight: 500; }
+
+    .badges { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .5rem; }
+    .badge { background: var(--chip); color: var(--ink); padding: .25rem .6rem; border-radius: 999px; font-size: .8rem; border: 1px solid var(--border); }
+
+    .section { margin-bottom: 1rem; }
+    .section h2 { font-size: 1rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 .5rem; }
+
+    .list { display: grid; gap: .9rem; }
+    .item { display: grid; grid-template-columns: 1fr auto; gap: .25rem .75rem; }
+    .item h3 { margin: 0; font-size: 1rem; }
+    .meta { color: var(--muted); font-size: .9rem; }
+    .pill { font-family: "Fira Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: .8rem; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .skill { padding: .35rem .6rem; border-radius: .6rem; border: 1px dashed var(--border); background: transparent; }
+
+    .contact { display: grid; gap: .35rem; }
+    .contact a { display: inline-flex; align-items: center; gap: .5rem; }
+    .icon { width: 18px; height: 18px; opacity: .8; }
+
+    /* Print styles */
+    @media print {
+      body { background: #fff; }
+      .container { max-width: 800px; padding: 0; }
+      .topbar, .actions { display: none !important; }
+      .card { border: 0; padding: 0; }
+      .grid { gap: 1rem; grid-template-columns: 280px 1fr; }
+      a { color: black; text-decoration: none; }
+      .badge, .skill { border-color: #ddd; }
+      @page { margin: 14mm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar" role="toolbar" aria-label="CV actions">
+      <div class="actions">
+        <button class="btn" onclick="window.print()" aria-label="Print or save as PDF">Print / Save PDF</button>
+        <a class="btn" href="#" download title="Download as HTML">Download HTML</a>
+      </div>
+    </div>
+
+    <div class="grid" role="main">
+      <!-- Sidebar -->
+      <aside class="card" aria-label="Sidebar">
+        <div class="header">
+          <img src="avatar.jpg" alt="Portrait of Your Name" class="avatar" />
+          <div>
+            <h1 class="name">Your Name</h1>
+            <p class="role">Your Role / Specialization</p>
+            <div class="badges">
+              <span class="badge">Open to work</span>
+              <span class="badge">Remote-friendly</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" aria-label="Contact">
+          <h2>Contact</h2>
+          <div class="contact">
+            <a href="mailto:you@example.com" aria-label="Email">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+              you@example.com
+            </a>
+            <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0zM8 8h4.8v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46C22.42 7.74 24 10.1 24 14.1V24h-5v-8.6c0-2.05-.04-4.7-2.86-4.7-2.86 0-3.3 2.23-3.3 4.54V24H8z"/></svg>
+              linkedin.com/in/yourhandle
+            </a>
+            <a href="https://github.com/yourhandle" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05a9.23 9.23 0 0 1 5 0c1.9-1.32 2.74-1.05 2.74-1.05.56 1.42.21 2.47.11 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" clip-rule="evenodd"/></svg>
+              github.com/yourhandle
+            </a>
+            <a href="https://your-portfolio.com" target="_blank" rel="noreferrer" aria-label="Website">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+              your-portfolio.com
+            </a>
+            <div class="meta">Location · Open to relocation</div>
+          </div>
+        </div>
+
+        <div class="section" aria-label="Skills">
+          <h2>Skills</h2>
+          <div class="skills">
+            <span class="skill">JavaScript</span>
+            <span class="skill">TypeScript</span>
+            <span class="skill">React</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">Python</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Docker</span>
+            <span class="skill">AWS</span>
+          </div>
+        </div>
+
+        <div class="section" aria-label="Languages">
+          <h2>Languages</h2>
+          <div class="list">
+            <div class="item"><h3>English</h3><div class="meta">Native</div></div>
+            <div class="item"><h3>Spanish</h3><div class="meta">Professional</div></div>
+          </div>
+        </div>
+
+        <div class="section" aria-label="Links">
+          <h2>Highlights</h2>
+          <ul>
+            <li>5+ years building data-driven products</li>
+            <li>Led team of 6 engineers</li>
+            <li>2 patents pending</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <section class="card" aria-label="Main content">
+        <div class="section" aria-label="Summary">
+          <h2>Summary</h2>
+          <p>Product-oriented software engineer focused on crafting resilient, accessible web apps. I thrive in ambiguous problem spaces, balance speed with rigor, and collaborate closely with design, product, and data to ship measurable outcomes.</p>
+        </div>
+
+        <div class="section" aria-label="Experience">
+          <h2>Experience</h2>
+          <div class="list">
+            <article class="item" aria-label="Role 1">
+              <div>
+                <h3>Senior Software Engineer · Acme Corp</h3>
+                <div class="meta">San Francisco · Full-time</div>
+                <ul>
+                  <li>Architected a micro-frontend platform used by 8 teams, cutting feature lead time by <span class="pill">-35%</span>.</li>
+                  <li>Redesigned critical checkout flow, improving conversion by <span class="pill">+7.8%</span>.</li>
+                  <li>Mentored 4 engineers; instituted quarterly perf budget and accessibility audits (WCAG 2.2 AA).</li>
+                </ul>
+              </div>
+              <div class="meta">2022 — Present</div>
+            </article>
+
+            <article class="item" aria-label="Role 2">
+              <div>
+                <h3>Software Engineer · Beta Labs</h3>
+                <div class="meta">Remote · Full-time</div>
+                <ul>
+                  <li>Built data pipelines handling <span class="pill">3B+</span> events/day with Apache Kafka + Flink.</li>
+                  <li>Delivered internal design system (40+ components) with unit/visual tests; adopted by 5 teams.</li>
+                  <li>Owned on-call rotation, improving mean time to recovery by <span class="pill">-42%</span>.</li>
+                </ul>
+              </div>
+              <div class="meta">2019 — 2022</div>
+            </article>
+          </div>
+        </div>
+
+        <div class="section" aria-label="Projects">
+          <h2>Projects</h2>
+          <div class="list">
+            <article class="item">
+              <div>
+                <h3>Open Forecast</h3>
+                <div class="meta">Time-series forecasting toolkit · Python</div>
+                <ul>
+                  <li>Implements hierarchical reconciliation; outperforms naïve baseline by <span class="pill">21% sMAPE</span>.</li>
+                  <li>Packaged with docs, CI, type hints, and benchmarks.</li>
+                </ul>
+              </div>
+              <div class="meta"><a href="#">github.com/yourhandle/open-forecast</a></div>
+            </article>
+            <article class="item">
+              <div>
+                <h3>Pulse UI</h3>
+                <div class="meta">Accessible component library · TypeScript</div>
+                <ul>
+                  <li>Headless primitives with ARIA patterns; tested in NVDA/VoiceOver.</li>
+                </ul>
+              </div>
+              <div class="meta"><a href="#">your-portfolio.com/pulse</a></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="section" aria-label="Education">
+          <h2>Education</h2>
+          <div class="list">
+            <article class="item">
+              <div>
+                <h3>Success University</h3>
+                <div class="meta">B.S. in Computer Science, GPA 3.8/4.0</div>
+                <ul>
+                  <li>Coursework: Algorithms, Distributed Systems, Databases, ML</li>
+                  <li>Awards: Dean's List (4x)</li>
+                </ul>
+              </div>
+              <div class="meta">2015 — 2019</div>
+            </article>
+          </div>
+        </div>
+
+        <div class="section" aria-label="Certifications">
+          <h2>Certifications</h2>
+          <ul>
+            <li>AWS Certified Solutions Architect – Associate</li>
+            <li>Google Professional Data Engineer</li>
+          </ul>
+        </div>
+
+        <div class="section" aria-label="Interests">
+          <h2>Interests</h2>
+          <p>Running, coffee brewing, minimalist photography, and open-source sustainability.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Optional: JSON-LD for better SEO when you publish -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "jobTitle": "Software Engineer",
+    "url": "https://your-username.github.io",
+    "email": "mailto:you@example.com",
+    "sameAs": [
+      "https://linkedin.com/in/yourhandle",
+      "https://github.com/yourhandle"
+    ],
+    "worksFor": { "@type": "Organization", "name": "Acme Corp" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Success University" }
+  }
+  </script>
+</body>
+</html>
