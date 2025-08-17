@@ -3,136 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal website and CV of Your Name. Showcasing projects, skills, and experience.">
-  <meta property="og:title" content="Your Name - Portfolio">
-  <meta property="og:description" content="Explore projects, skills, and career experience.">
+  <meta name="description" content="Modern, one-page CV of Minhaj Uddin Ansari showcasing skills, projects, experience, and contact info.">
+  <meta property="og:title" content="Minhaj Uddin Ansari - Portfolio">
+  <meta property="og:description" content="Explore projects, skills, and career experience in a modern, scrollable CV.">
   <meta property="og:image" content="avatar.jpg">
   <title>Minhaj Uddin Ansari - CV</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      background: #f4f4f4;
       color: #333;
+      scroll-behavior: smooth;
     }
     header {
-      background: #4CAF50;
+      background: linear-gradient(90deg, #4CAF50, #2E7D32);
       color: white;
-      padding: 1.5rem;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 4rem 2rem;
     }
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 3rem;
     }
-    nav {
+    header p {
+      font-size: 1.2rem;
       margin-top: 0.5rem;
     }
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
     section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
     section h2 {
-      color: #4CAF50;
-      margin-bottom: 0.5rem;
+      color: #2E7D32;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #4CAF50;
+      padding-bottom: 0.5rem;
     }
     .profile-pic {
       display: block;
-      margin: 0 auto 1rem;
-      width: 120px;
-      height: 120px;
+      margin: 0 auto 1.5rem;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
+      border: 4px solid #4CAF50;
     }
     ul {
-      padding-left: 20px;
+      padding-left: 1.5rem;
     }
     footer {
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      background: #333;
+      padding: 2rem;
+      background: #2E7D32;
       color: white;
+      margin-top: 3rem;
+    }
+    .social-icons {
+      margin-top: 1rem;
     }
     .social-icons a {
-      margin: 0 10px;
-      color: white;
+      margin: 0 15px;
+      color: #2E7D32;
+      font-weight: bold;
       text-decoration: none;
-      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #4CAF50;
     }
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
-      nav a {
-        display: inline-block;
-        margin: 5px;
+      header p {
+        font-size: 1rem;
       }
-    }
-    html {
-      scroll-behavior: smooth;
+      section {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Your Name</h1>
-    <p>Job Title | Short Tagline</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Minhaj Uddin Ansari</h1>
+    <p>Full-Stack Developer | Software Engineer | Portfolio</p>
   </header>
 
   <section id="about">
-    <img src="avatar.jpg" alt="Your photo" class="profile-pic">
+    <img src="avatar.jpg" alt="Minhaj Uddin Ansari" class="profile-pic">
     <h2>About Me</h2>
-    <p>Write a short professional summary here. Highlight what makes you unique, your career focus, and what you're passionate about.</p>
+    <p>Passionate software engineer with expertise in building modern web applications, solving complex problems, and delivering user-friendly solutions. Always learning and improving skills in full-stack development.</p>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
-    <h3>Job Title - Company</h3>
+    <h3>Software Engineer - Company</h3>
     <p><em>Jan 2021 – Present</em></p>
     <ul>
-      <li>Key achievement or responsibility #1.</li>
-      <li>Key achievement or responsibility #2.</li>
+      <li>Developed scalable web applications using React and Node.js.</li>
+      <li>Collaborated with cross-functional teams to design software solutions.</li>
     </ul>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <h3>Project Title</h3>
-    <p>Description of the project and technologies used. <a href="#">View project</a></p>
+    <h3>Portfolio Website</h3>
+    <p>Modern, responsive personal portfolio showcasing skills and projects. <a href="#">View project</a></p>
+    <h3>Web App Project</h3>
+    <p>Full-stack web application using MongoDB, Express, React, Node.js. <a href="#">View project</a></p>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <ul>
-      <li>Skill 1</li>
-      <li>Skill 2</li>
-      <li>Skill 3</li>
+      <li>JavaScript, React, Node.js</li>
+      <li>HTML, CSS, Responsive Design</li>
+      <li>REST APIs, Database Design</li>
     </ul>
   </section>
 
@@ -146,7 +140,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
+    <p>&copy; 2025 Minhaj Uddin Ansari. All rights reserved.</p>
   </footer>
 </body>
 </html>
