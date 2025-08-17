@@ -34,15 +34,14 @@
     .item span {font-size:0.9rem; color:#444; font-style:italic;} /* Darker gray and italic */
     .item p {margin-top:5px; color:#555;}
     
-    /* Make all research titles blue and clickable */
-  .item h3 {
-  color: #2c3e50;
+/* Default heading style */
+.item h3 {
+  color: #2c3e50; /* normal dark */
 }
 
-/* Override: make only linked h3 blue */
-#research .item a h3,
-#awards .item a h3 {
-  color: #3498db !important;
+/* If the heading is wrapped in an <a>, make it blue */
+.item a h3 {
+  color: #3498db;
 }
 
     /* Skills */
